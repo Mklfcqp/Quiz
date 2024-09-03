@@ -2,6 +2,7 @@ package com.quiz.quiz;
 
 import com.quiz.quiz.entity.PlayerEntity;
 import com.quiz.quiz.repository.PlayerRepository;
+import com.quiz.quiz.service.QuizDataService;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import jakarta.transaction.Transactional;
@@ -19,6 +20,9 @@ public class StartupRunner implements CommandLineRunner {
     @Autowired
     private PlayerRepository playerRepository;
 
+    @Autowired
+    private QuizDataService quizDataService;
+
     @Override
     public void run(String...args) throws Exception {
         log.info("Executing startup actions...");
@@ -31,5 +35,8 @@ public class StartupRunner implements CommandLineRunner {
         for (PlayerEntity player : playersFromDatabase) {
             log.info("Retrieved player: " + player);
         }
+
+//        quizDataService.getQuizCategories();
+//        quizDataService.getQuizQuestions();
     }
 }

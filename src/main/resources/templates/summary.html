@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<header class="bg-success text-white">
+  <div class="container text-center">
+    <h1>Congratulations!</h1>
+    <p class="lead" th:text="'You finished ' + ${difficulty} + ' quiz about ' + ${categoryName} + ' with score ' + ${points} + '/' + ${maxPoints} + '.'"></p>
+    <a class="btn btn-primary" href="select">Play again!</a>
+  </div>
+</header>
+</html>
